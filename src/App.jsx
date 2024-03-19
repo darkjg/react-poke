@@ -1,7 +1,14 @@
 import './App.css';
+import { createBrowserRouter } from 'react-router-dom'
+import Home from "./Componentes/Home"
 
-function App () {
-  <></>
-};
+const App = createBrowserRouter([
+  {
+    path: '/',
+    children: [
+      {path:'/', element: <Home/>}
+    ]
+  }
+])
 
 export default App;
