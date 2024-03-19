@@ -13,7 +13,7 @@ function Busqueda() {
                 const respuesta = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre}`);
                 if (respuesta.ok) {
                     const datos = await respuesta.json();
-                 
+
                     if (datos.name) {
                         setMostrarDatos(`Nombre ${datos.name}`)
                     }
@@ -22,7 +22,7 @@ function Busqueda() {
                     }
 
 
-                } else {                 
+                } else {
                     setMostrarDatos(["Pokemon no encontrado"])
                     setMostrarImg(null)
                 }
@@ -46,8 +46,10 @@ function Busqueda() {
             <form>
                 <input type="text" placeholder="Ingresa el nombre del Pokémon" value={nombre} onChange={handleChange} />
             </form>
-            <h2>{[mostrarDatos] ?? 'Loading...'}</h2>
-            <img src={[mostrarImg] ?? ''}></img>
+            <div className={styles.Home}>
+                <h2>{[mostrarDatos] ?? 'Loading...'}</h2>
+                <img src={[mostrarImg] ?? ''}></img>
+            </div>
         </>
     )
 
